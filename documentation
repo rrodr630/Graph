@@ -1,0 +1,3 @@
+In this project I created my own version of a graph data structure, which contains operations for creating GraphNodes and connect them. 
+I also added a method to find the shortest path between two vertices, Dijkstra algorithm, which I made my own verison using a Heap, that
+I also made. Overall the project is pretty clear, I hope that you can easily understand it and enjoy it!
