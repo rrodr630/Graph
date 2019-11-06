@@ -66,6 +66,9 @@ public class Graph
         {
             GraphNode current = heap.deleteMin();
 
+            if (current.visited)
+                continue;
+
             // iterates thru the list of adjacent nodes of current vertex
             for(int i = 0; i < current.adjacentNodes.size(); i++)
             {
@@ -77,6 +80,7 @@ public class Graph
                     heap.add(current.adjacentNodes.get(i));
                 }
             }
+            current.visited = true;
         }
         // Linking the path in a stack
         Stack<GraphNode> stack = new Stack<>();
@@ -115,12 +119,14 @@ public class Graph
         ArrayList<Integer> distances;     //  2  3  1  4
         int weight;
         String name;
+        boolean visited;
 
         //Exclusively for Dijkstra algorithm
         GraphNode previous;
 
         GraphNode(String name, int weight)
         {
+            this.visited = false;
             this.name = name;
             this.weight = weight;
             adjacentNodes = new ArrayList<>();
